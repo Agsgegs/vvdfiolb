@@ -1,0 +1,14 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local Folder = workspace.World.Mobs
+while true do
+for _,v in pairs(Folder:GetChildren()) do
+if v:IsA("Model") then 
+local args = { [1] = v }
+game:GetService("ReplicatedStorage"):WaitForChild("Universe"):WaitForChild("Network"):WaitForChild("Remotes"):WaitForChild("DamageFire"):FireServer(unpack(args))
+else return
+end
+end
+task.wait()
+end
